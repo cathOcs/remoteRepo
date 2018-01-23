@@ -59,10 +59,16 @@ if (empty($usn)){
 }else{
    $sql1 = "INSERT INTO accountinfo (Username,Email,pw,confps,Fname,Lname,Cnum,Adrss,City,State,Zp) VALUES ('$usn','$email', '$pass','$cpass','$fname','$lname', '$cnumber','$address','$city','$state', '$zip')";
     $result = $conn -> query($sql1);
+
+    if($result){
+    echo "Success";
+    echo "<BR>";
+    echo "<a href='registration.php'>Back to main page<a/>";
+    }else{
+    echo "Error";
+    }
     
-   header("Location: registration.php?error=empty"); 
-    
-    
-    
+   //header("Location: registration.php?error=empty"); 
+ 
 }
 ?>
